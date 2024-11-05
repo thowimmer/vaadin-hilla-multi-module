@@ -8,8 +8,14 @@ import com.vaadin.hilla.Nonnull;
 @BrowserCallable
 public class ExampleEndpoint {
 
+    private final ExampleService service;
+
+    ExampleEndpoint(ExampleService service) {
+        this.service = service;
+    }
+
     @Nonnull
     public String getText() {
-        return "Hello from Endpoint!";
+        return service.getText();
     }
 }
